@@ -19,6 +19,8 @@ echo $_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];      //包含当前脚本的路径。
 
+echo "<hr>";
+var_dump($GLOBALS) ;
 ?> 
 
 </body> 
