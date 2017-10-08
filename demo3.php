@@ -33,7 +33,7 @@
 			class MyHelloWorld extends Base {
 			    use SayWorld;
 			}
-			 
+			 // Thank you to tast.
 			$o = new MyHelloWorld();
 			$o->sayHello();
 			$obase = new Base();
