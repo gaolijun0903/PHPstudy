@@ -5,7 +5,7 @@
 <h1>My first PHP page</h1> 
 
 <?php 
-echo "Hello World!"; 
+echo "wang love jun,hahaha~"; 
 echo "<br>";
 echo $_SERVER['PHP_SELF'];   //当前执行脚本的文件名，与 document root 有关
 echo "<br>";

@@ -34,6 +34,7 @@
 					print "销毁" . $this->name . "\n";
 				}
 			}
+			// wang love jun
 			/*创建实例*/
 			$runoob = new Site('www.runoob.com','菜鸟教程');
 			$taobao = new Site('www.taobao.com','淘宝');

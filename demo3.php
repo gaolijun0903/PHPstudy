@@ -15,6 +15,7 @@
 			echo '<h2>__DIR__文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。</h2>';
 			echo '改文件位于“'.__DIR__.'”';
 			echo '<h2>__TRAIT__代码复用的一个方法</h2>';
+			echo '代立旺love高丽君'
 		
 			class Base {
 			    public function sayHello() {
@@ -32,7 +33,7 @@
 			class MyHelloWorld extends Base {
 			    use SayWorld;
 			}
-			 
+			 // Thank you to tast.
 			$o = new MyHelloWorld();
 			$o->sayHello();
 			$obase = new Base();
