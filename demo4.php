@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>面向对象</title>
+		<title>面向对象-旺旺</title>
 	</head>
 	<body>
 		<?php
