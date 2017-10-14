@@ -7,7 +7,7 @@
 <?php 
 echo "wang love jun,hahaha~"; 
 echo "<br>";
-echo $_SERVER['PHP_SELF'];   //当前执行脚本的文件名，与 document root 有关
+echo $_SERVER['PHP_SELF'];   //当前执行脚本的文件名，与 document root   有关
 echo "<br>";
 echo $_SERVER['SERVER_NAME'];    //当前运行脚本所在的服务器的主机名。
 echo "<br>";
