@@ -1,5 +1,9 @@
 <!DOCTYPE html> 
 <html> 
+<head>
+	<meta charset="UTF-8">
+	<title>入门</title>
+</head>
 <body> 
 
 <h1>My first PHP page1</h1> 
