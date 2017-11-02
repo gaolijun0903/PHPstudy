@@ -4,7 +4,7 @@
  * var_dump()  没有返回值，直接输出到浏览器 与echo类似
  * gettype(变量或常量) 有返回值 string init object
  * 
- * define('URL','www.baidu.com'); 定义常量
+ * define('URL','www.baidu.com'); 定义常量,只能定义标量类型的常量string int float Boolean
  * 
  * is_int()   is_float()	is_array()	is_object()	 is_null()	is_resource()  返回布尔型值
  */

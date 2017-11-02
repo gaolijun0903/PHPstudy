@@ -36,6 +36,6 @@
 			<p>当用户点击链接 "Test $GET", 参数 "subject" 和 "web" 将发送至"test_get.php",</p>
 			<p>你可以在 "test_get.php" 文件中使用 $_GET 变量来获取这些数据。</p>
 		</div>
-		<a href="test_get.php?subject=PHP&web=runoob.com">Test $GET</a>
+		<a href="demo2-test_get.php?subject=PHP&web=runoob.com">Test $GET</a>
 	</body>
 </html>

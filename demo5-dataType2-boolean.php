@@ -4,7 +4,7 @@
  * 为布尔型假的类型： FALSE、   0 、   ''、   '0'、  null、   空数组$a = array();
  */
 
-
+header('Content-Type:text/html;charset=utf-8');
 $name = $_GET['username'];
 if($name){
 	echo "你的名字是：".$name;
