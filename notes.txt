@@ -35,3 +35,23 @@ php笔记：
 			 	echo "新字符串长度：".strlen($new_url)."<br/>";
 			 	echo $new_url;
 			 */
+	2、4  字符串翻转函数
+		strrev()
+	2、5 md5加密
+		md5()
+	2、6 格式化金额字符串函数
+		number_format("字符串",小数位数,小数点,千位分隔符)
+		$num = "13234455";
+		echo number_format($num,3,"|","=");
+	2、7 字符串拆分成数组
+		explode("以哪个字符串进行拆分","被拆分的字符串","返回数组元素的数目");
+			$str ="absdf.dfj.wero.ret.pijwef";
+			$arr = explode(".",$str);
+			print_r($arr);	
+	2、8 把数组元素拼接成字符串
+		implode("以哪个字符串连接",数组);
+			$arr = array("君君","旺旺","花花","草草");
+			$str = implode($arr);
+			var_dump($str);
+			$str2 = implode("*",$arr);
+			var_dump($str2);
