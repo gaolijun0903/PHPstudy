@@ -1,0 +1,37 @@
+php笔记：
+
+1、函数
+	func_get_args() 返回一个数组，数组里面包含所有参数
+	func_num_args() 返回参数个数
+	func_get_arg(idx)  返回第idx个参数 
+	
+	include() 如果载入的文件不存在，提示警告错误，程序可以继续执行
+	require() 如果载入的文件不存在，致命性错误，程序终止
+	include_once() 只载入一次文件，如果此文件载入过，将不再载入
+	
+2、字符串处理函数：
+	2、0   字符串长度 
+		strlen
+	2、1 PHP处理字符串的空格
+		trim 对字符串左右空格删除
+		ltrim 对字符串左部空格删除
+		rtrim 对字符串右侧空格删除
+	2、2  对字符串大小写的处理
+		strtolower 将字符串转换成小写
+		strtoupper 将字符串转换成大写
+		ucfirst    首字母大写		Hello world
+		ucwords    单词首字母大写          Hello World
+	2、3 字符串填充函数
+		str_pad("字符串",长度,"填充的内容",填充的方向)
+			长度：填充后新字符串长度，需大于旧字符串长度
+			填充方向：STR_PAD_BOTH 左右两个侧进行填充，如果填充为奇数，右侧多填
+				   STR_PAD_LEFT 左侧填充
+				   STR_PAD_RIGHT 右侧填充
+			/*
+			 * $url = "hello world!";
+			 	echo "旧字符串长度：".strlen($url);
+			 	echo "<br/>-------------<br/>";
+			 	$new_url = str_pad($url,20,"+",STR_PAD_BOTH);
+			 	echo "新字符串长度：".strlen($new_url)."<br/>";
+			 	echo $new_url;
+			 */
