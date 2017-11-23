@@ -27,31 +27,60 @@ php笔记：
 			填充方向：STR_PAD_BOTH 左右两个侧进行填充，如果填充为奇数，右侧多填
 				   STR_PAD_LEFT 左侧填充
 				   STR_PAD_RIGHT 右侧填充
-			/*
-			 * $url = "hello world!";
-			 	echo "旧字符串长度：".strlen($url);
-			 	echo "<br/>-------------<br/>";
-			 	$new_url = str_pad($url,20,"+",STR_PAD_BOTH);
-			 	echo "新字符串长度：".strlen($new_url)."<br/>";
-			 	echo $new_url;
-			 */
-	2、4  字符串翻转函数
+			$url = "hello world!";
+		 	echo "旧字符串长度：".strlen($url);
+		 	echo "<br/>-------------<br/>";
+		 	$new_url = str_pad($url,20,"+",STR_PAD_BOTH);
+		 	echo "新字符串长度：".strlen($new_url)."<br/>";
+		 	echo $new_url;
+			
+	2、4   字符串翻转函数
 		strrev()
 	2、5 md5加密
 		md5()
-	2、6 格式化金额字符串函数
+	2、6  格式化金额字符串函数
 		number_format("字符串",小数位数,小数点,千位分隔符)
 		$num = "13234455";
 		echo number_format($num,3,"|","=");
-	2、7 字符串拆分成数组
+	2、7  字符串拆分成数组
 		explode("以哪个字符串进行拆分","被拆分的字符串","返回数组元素的数目");
 			$str ="absdf.dfj.wero.ret.pijwef";
 			$arr = explode(".",$str);
 			print_r($arr);	
-	2、8 把数组元素拼接成字符串
+	2、8  把数组元素拼接成字符串
 		implode("以哪个字符串连接",数组);
 			$arr = array("君君","旺旺","花花","草草");
 			$str = implode($arr);
 			var_dump($str);
 			$str2 = implode("*",$arr);
 			var_dump($str2);
+	2、9 字符串输出
+		echo() 输出一个或多个字符串，“,”隔开
+		print() 输出字符串（一个）
+		printf() 格式化输出字符串
+			$num = 152;
+			$num2 = 234;
+			printf("%.2f",$num);   152.00
+			printf("这是一个字符串输出方式%.2f，格式化输出%.3f",$num,$num2);   152.00   234.000
+			printf("这是一个字符串输出方式%1\$.3f，格式化输出%1\$u",$num);       152.000   152
+	2、10  字符串截取
+		substr(被截取的字符串，起始索引值，截取字符个数) 对字符串进行指定数量的截取
+			$houdunwang = "bbs.houdunwang.com";
+						   012345678901234567
+			$str = substr($houdunwang,3,10);   houdunwang
+			$str1 = substr($houdunwang,-3);   com
+			$str1 = substr($houdunwang,-3,2);   co
+	2、11 字符串查找，返回字符串
+		strchr()  strstr的别名 ，对字符串进行查找 ,区分大小写 ，返回第一次找到的字符串及以后的部分
+		stristr()  对字符串进行查找 ,不区分大小写 ，返回找到的字符串及以后的部分
+		strrchr()  返回最后一次找到的字符串及以后部分。
+			$str = "昔人已乘黄鹤去，此地空余黄鹤楼。";
+			$result  = strchr($str,"黄鹤");  	 	 string()"黄鹤去，此地空余黄鹤楼。";
+			$result2 = strchr($str,"长江");   	 boolean(false);
+			$result2 = strrchr($str,"黄鹤");	 	 string()"黄鹤楼。";
+	2、12 字符串查找，返回索引值
+		strpos() 区分大小写
+		stripos() 不区分大小写
+		strrpos() 从后查找
+			$str = "昔人已乘黄鹤去，此地空余黄鹤楼。";
+			strpos($str,"黄鹤");    4
