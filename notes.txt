@@ -40,8 +40,8 @@ php笔记：
 		md5()
 	2、6  格式化金额字符串函数
 		number_format("字符串",小数位数,小数点,千位分隔符)
-		$num = "13234455";
-		echo number_format($num,3,"|","=");
+			$num = "13234455";
+			echo number_format($num,3,".",",");   13,234,455.000
 	2、7  字符串拆分成数组
 		explode("以哪个字符串进行拆分","被拆分的字符串","返回数组元素的数目");
 			$str ="absdf.dfj.wero.ret.pijwef";
@@ -84,3 +84,29 @@ php笔记：
 		strrpos() 从后查找
 			$str = "昔人已乘黄鹤去，此地空余黄鹤楼。";
 			strpos($str,"黄鹤");    4
+	2、13 字符串拆分
+		strtok()  以某种已包含的字符串进行拆分
+			$str = "how a sunny day! to be a better man!";
+			$s = strtok($str," ");      //以空格拆分
+			while($s！==false){
+				echo $s."-----";
+				$s = strtok(" ");
+			}
+			
+			//  how-----a-----sunny-----day!-----to-----be-----a-----better-----man!
+			
+		chunk_split() 指定拆分长度，和隔离符号的拆分方式
+			$str = "how a sunny day! to be a better man!";
+			echo chunk_split($str,3,"|");    //how| a |sun|ny |day|! t|o b|e a| be|tter| ma|n!
+
+	2、14 字符串截取为变量
+		parse_str()
+			$url = "www.baidu.com?uname=haha&age=12&sex=boy";
+			$u_msg =  substr($url,(strpos($url,"?")+1));    uname=haha&age=12&sex=boy
+			parse_str($u_msg);	
+			echo "你的姓名是：{$uname}，你的年龄是：{$age}，你的性别是：{$sex}";
+	2、15 字符串替换
+		str_replace()
+			$str = "how a sunny day!";
+			$newStr = str_replace('h','H',$str);     //How a sunny day!
+		
