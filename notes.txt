@@ -106,7 +106,24 @@ php笔记：
 			parse_str($u_msg);	
 			echo "你的姓名是：{$uname}，你的年龄是：{$age}，你的性别是：{$sex}";
 	2、15 字符串替换
-		str_replace()
+		str_replace()   替换字符串或数组元素  区分大小写  第4个参数可选用于统计替换次数
+		str_ireplace()  不区分大小写
 			$str = "how a sunny day!";
 			$newStr = str_replace('h','H',$str);     //How a sunny day!
-		
+			
+			$arr1 = array("H","a","n");
+			$arr2 = array("**H","A","N");
+			$newStr  = str_ireplace($arr1,$arr2,$str,$k);
+			echo $newStr;
+			echo $k;      替换了多少次    
+			
+			$arr0 = array("how a sunny day!","happy new year!");
+			$arr1 = array("H","a","n");
+			$arr2 = array("**H","A","N");
+			$newArr  = str_ireplace($arr1,$arr2,$arr0,$k);
+			print_r($newArr);
+			echo $k;      替换了多少次    
+	
+	
+	
+	 -ignore-certificate-errors		
