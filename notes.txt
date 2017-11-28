@@ -70,6 +70,13 @@ php笔记：
 			$str = substr($houdunwang,3,10);   houdunwang
 			$str1 = substr($houdunwang,-3);   com
 			$str1 = substr($houdunwang,-3,2);   co
+	2、10 字符串截取为变量
+		parse_str()
+			$url = "www.baidu.com?uname=haha&age=12&sex=boy";
+			$u_msg =  substr($url,(strpos($url,"?")+1));    uname=haha&age=12&sex=boy
+			parse_str($u_msg);	
+			echo "你的姓名是：{$uname}，你的年龄是：{$age}，你的性别是：{$sex}";
+		parse_url() 解析url,返回其组成部分，详见2、17
 	2、11 字符串查找，返回字符串
 		strchr()  strstr的别名 ，对字符串进行查找 ,区分大小写 ，返回第一次找到的字符串及以后的部分
 		stristr()  对字符串进行查找 ,不区分大小写 ，返回找到的字符串及以后的部分
@@ -84,6 +91,11 @@ php笔记：
 		strrpos() 从后查找
 			$str = "昔人已乘黄鹤去，此地空余黄鹤楼。";
 			strpos($str,"黄鹤");    4
+	2、12 字符串查找统计，返回出现次数
+		substr_count()  可指定查找的起始位置，和长度
+			$str = "hello world, hello wangwang!";
+			substr_count($str,"hello",5,15);  //在指定查找的起始位置，和长度中出现1次,返回1
+	
 	2、13 字符串拆分
 		strtok()  以某种已包含的字符串进行拆分
 			$str = "how a sunny day! to be a better man!";
@@ -91,20 +103,12 @@ php笔记：
 			while($s！==false){
 				echo $s."-----";
 				$s = strtok(" ");
-			}
-			
-			//  how-----a-----sunny-----day!-----to-----be-----a-----better-----man!
+			}             //  how-----a-----sunny-----day!-----to-----be-----a-----better-----man!
 			
 		chunk_split() 指定拆分长度，和隔离符号的拆分方式
 			$str = "how a sunny day! to be a better man!";
 			echo chunk_split($str,3,"|");    //how| a |sun|ny |day|! t|o b|e a| be|tter| ma|n!
-
-	2、14 字符串截取为变量
-		parse_str()
-			$url = "www.baidu.com?uname=haha&age=12&sex=boy";
-			$u_msg =  substr($url,(strpos($url,"?")+1));    uname=haha&age=12&sex=boy
-			parse_str($u_msg);	
-			echo "你的姓名是：{$uname}，你的年龄是：{$age}，你的性别是：{$sex}";
+	
 	2、15 字符串替换
 		str_replace()   替换字符串或数组元素  区分大小写  第4个参数可选用于统计替换次数
 		str_ireplace()  不区分大小写
@@ -123,6 +127,40 @@ php笔记：
 			$newArr  = str_ireplace($arr1,$arr2,$arr0,$k);
 			print_r($newArr);
 			echo $k;      替换了多少次    
+		strtr() 替换字符串中任意字符
+			strtr("www.baidu.com","bdm","BDM");     //www.BaiDu.coM
+			$arr = array("b"=>"B","d"=>"D","m"=>"M");
+			strtr("www.baidu.com",$arr);     //www.BaiDu.coM
+	2、16 字符串比较函数
+		strcmp("hello","world") 比较字符串，区分大小写
+							串1=串2，返回0   
+							串1<串2，返回-1     strcmp("10","2")
+							串1>串2，返回1 		strnatcmp("10","2")
+		strcasecmp("Hello","hello") 不区分大小写   0
+		strnatcmp("10","2")  按自然数进行字符串比较
+		strncmp("1001","1002",3) 指定位数进行比较 前位相等 ，返回0
+		similar_text("helloa","yellow",$v)  返回形同字符位数 4 , $v是相同字符所占百分率
+	
+	2、17 字符串处理函数
+		parse_url()  解析url,返回其组成部分
+			$url = "http://www.baidu.com/admin/index.php?uname=admin&pwd=123";
+			$arr = parse_url($url);
+			echo "<pre>";
+			print_r($arr);
+			echo "<br/>".parse_url($url,PHP_URL_HOST);   //  www.baidu.com
+			echo "<br/>".parse_url($url,PHP_URL_PATH);    //   /admin/index.php	
+				Array(
+				    [scheme] => http
+				    [host] => www.baidu.com
+				    [path] => /admin/index.php
+				    [query] => uname=admin&pwd=123
+				)
+		urlencode  URL编码
+	
+	
+	
+	
+	
 	
 	
 	

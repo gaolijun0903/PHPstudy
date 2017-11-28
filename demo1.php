@@ -24,7 +24,16 @@ echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];      //包含当前脚本的路径。
 
 echo "<hr>";
-var_dump($GLOBALS) ;
+//var_dump($GLOBALS) ;
+
+$url = "http://www.baidu.com/admin/index.php?uname=admin&pwd=123";
+			$arr = parse_url($url);
+			echo "<pre>";
+			print_r($arr);
+			echo "<br/>".parse_url($url,PHP_URL_HOST);
+			echo "<br/>".parse_url($url,PHP_URL_PATH);
+			echo "<br/>".parse_url($url,PHP_URL_QUERY);
+ 	
 ?> 
 
 </body> 
