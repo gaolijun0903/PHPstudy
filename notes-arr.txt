@@ -1,0 +1,54 @@
+php笔记：
+数组：
+1、  foreach($arr as $key=>$value)
+
+2、  implode() 把数组组合成字符串
+   explode() 把字符串分割成数组
+	  $arr = array("语文","数学","英语");
+	  $str = implode(";",$arr);  //以;拼接
+	  echo $str;
+	  $arr2 = explode(";",$str);  //以;分割
+   
+3、  in_array()  检测内容是否在数组中   ,第三个参数是检测类型是否一致
+	  $arr = array(1,2,3,4,5);
+	  var_dump(in_array("1",$arr,TRUE));
+	  
+4、 each() 把数组元素拆分成新的数组,既包含原有的关联数组，也包含索引数组
+	  $arr = array("url"=>"baidu.com","name"=>"百度");
+	  print_r(each($arr));
+	  //Array
+	  //( 
+	  //	[1]=>baidu.com
+	  //	[value]=>baidu.com
+	  //	[0]=>url
+	  //	[key]=>url
+	  //)
+	  print_r(each($arr));
+	  //Array
+	  //( 
+	  //	[1]=>百度
+	  //	[value]=>百度
+	  //	[0]=>name
+	  //	[key]=>name
+	  //)
+	  print_r(each($arr)); //boolean(false)
+	  
+5、 list() 只认识索引数组
+	  $arr = array("baidu.com","百度");  
+	  list($url,$name)=$arr;
+	  echo $url,$name;    // baidu.com百度
+	  
+	  $arr = array("url"=>"baidu.com","name"=>"百度");
+	  while(list($k,$v) = each($arr)){
+	  	echo $k."=>".$v."<br/>";
+	  }
+6、 count(arr,1) 统计数组中元素个数,第二个参数是递归统计
+
+7、 reset(arr) 把数组内部指针移动到数组第一个元素，并返回元素值
+   end(arr)  把数组内部指针移动到数组最后一个元素，并返回元素值
+   next()  如果成功则返回数组中下一个元素的值，如果没有更多的数组元素则返回 FALSE
+   current() 返回数组中的当前元素的值
+   prev()   将内部指针指向数组中的上一个元素，并输出
+   key() 当前指针指向元素的键名
+   
+
