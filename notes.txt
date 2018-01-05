@@ -156,12 +156,68 @@ php笔记：
 				    [query] => uname=admin&pwd=123
 				)
 		urlencode  URL编码
+			$str="后盾网PHP课程&HTML课程";
+			echo "<a href='26.php?h=". $str ."'>后盾网</a>";
+			echo $_GET['h']   //后盾网PHP课程,未编码的，“&”后面的当成另一个变量了
+			
+			echo "<a href='26.php?h=". urlencode($str) ."'>后盾网</a>";
+			echo $_GET['h']   //后盾网PHP课程&HTML课程
+	
+		urldecode URL解码 已编码的内容
+			$str = "后盾网视频教程";
+			echo urlencode($str);
+			echo "<br/>";
+			echo urldecode(urlencode($str));
+		
+		htmlentities(string,flags,character-set,double_encode) 字符转换为 HTML 实体
+		参数：1转换字符串，
+			2转换规则 ENT_COMPAT（转换双引号，默认）
+				   ENT_QUOTES (转换单、双引号)
+				   ENT_NOQUOTES （ 不编码任何引号）
+			$str="<h1>bbs.houdunwang.com</h1>";
+			echo $str;  //bbs.houdunwang.com
+			echo htmlentities($str);  //<h1>bbs.houdunwang.com</h1>
+			$str2='www.houduanwang.com"PHP html"';
+			echo $str2;  //www.houduanwang.com"PHP html"
+			echo htmlentities($str2);  //www.houduanwang.com"PHP html" 查看源代码，这个双引号转化成是&quot;
+			
+			$str3='www.houduanwang.com后盾网视频教程';
+			echo $str3;  //www.houduanwang.com后盾网视频教程
+			echo htmlentities($str3);  //www.houduanwang.com后面的乱码
+			//中文不用这个转换
+			
+		htmlspecialchars 字符转换为 HTML 实体,不会转换中文
+			$str="<h1>bbs.houdunwang.com后盾网视频教程</h1>";
+			echo $str;  //bbs.houdunwang.com后盾网视频教程
+			echo htmlspecialchars($str);  //<h1>bbs.houdunwang.com后盾网视频教程</h1>
+		
+		htmlspecialchars_decode 把HTML实体转化成字符
+			
+	2、18 addslashes() 在预定义字符串 前添加反斜杠		
+		 stripslashes() 把转义字符串前的反斜杠删除
+		 get_magic_quotes_gpc 获得PHP.INT中是否开启自动转译
+		 ini_get_all() 获得PHP.INT中所有配置信息
+		 
+		print_r(ini_get_all());
+		if(!get_magic_quotes_gpc()){
+			$cname = addslashes($_GET['cname']);
+		}else{
+			$cname = $_GET['cname'];
+		}
+		echo $cname;	
+		echo stripslashes($cname);
+	2、19  get_magic_quotes_runtime();获得外部文件及数据库资料时，是否进行转义
+		  set_magic_quotes_runtime(); 设置获得外部文件及数据库资料时，是否进行转义，参数0 or 1
+		  strip_tags(str,"<span>");  剥离掉HTML标签,第二个参数是要保留的标签
+		  
 	
 	
 	
 	
 	
 	
-	
+			
+			
+			
 	
 	 -ignore-certificate-errors		
